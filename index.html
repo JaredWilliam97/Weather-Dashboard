@@ -2,13 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
-
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -16,7 +15,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
   </head>
-
+  <!-- created my containers using bootstrap -->
   <body>
     <div>
       <div class="container">
@@ -24,7 +23,7 @@
           <div class="col-lg-12">
             <div class="card-top text-center text-white bg-dark mb-3">
               <div class="card-two">
-                <h1>WEATHER DASHBOARD</h1>
+                <h1>Weather Finder</h1>
               </div>
             </div>
           </div>
@@ -33,7 +32,6 @@
         <div class="row">
           <div class="col-lg-12">Search for a City:</div>
         </div>
-
         <div class="row">
           <div class="col-lg-5">
             <input type="text" id="city-input" />
@@ -47,13 +45,8 @@
             </button>
           </div>
         </div>
-
         <div class="col-lg-7"></div>
-
-        <br />
-
         <!-- Cites -->
-
         <div class="row">
           <div class="col-lg-2">
             <div class="card" style="border: none">
@@ -61,9 +54,7 @@
               <div class="city-card-body" id="searched-city"></div>
             </div>
           </div>
-
           <div class="col-lg-2"></div>
-
           <!-- Weather column -->
           <div class="col-lg-8">
             <div class="city">
@@ -71,26 +62,19 @@
               <h3 class="today-date"></h3>
               <h3 class="condition-image"></h3>
             </div>
-
-            <br /><br />
-
             <div class="weather-info"></div>
           </div>
         </div>
-
-        <br />
-
         <div class="row">
           <div class="col-lg-12">
             <h2 id="five-day-text"></h2>
           </div>
         </div>
-
         <div class="row forecastCards"></div>
       </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- used the most updated version of jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/css/script.js"></script>
   </body>

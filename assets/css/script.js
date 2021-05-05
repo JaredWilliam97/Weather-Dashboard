@@ -14,7 +14,7 @@
 // created new key and started an array
 var APIKey = "1d6fd810a7af591bd185bc2ab7f866ba";
 var cityArray = [];
-
+// ran this function to get current weather
 function displayCurrentWeather(city) {
   var queryURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -22,7 +22,7 @@ function displayCurrentWeather(city) {
     "&APPID=" +
     APIKey +
     "&units=imperial";
-
+  // used jQuery to get my url and used .then to start the function
   $.ajax({
     url: queryURL,
     method: "GET",
@@ -54,6 +54,7 @@ function displayCurrentWeather(city) {
 
     $(".condition-image").append('<img src="' + bigCurrent + '" />');
   });
+  //created the search button
 }
 $("#search-button").on("click", function (event) {
   event.preventDefault();
@@ -76,6 +77,7 @@ $("#search-button").on("click", function (event) {
   displaySearchedCity(inputCity);
   fiveDayForecast(inputCity);
 });
+//created displayed search city
 function displaySearchedCity(newCity) {
   $(".city-card-body").empty();
 
@@ -98,7 +100,7 @@ function fiveDayForecast(inputCityName) {
     APIKey +
     "&units=imperial";
   var queryConditionImage =
-    // Run AJAX call to the OpenWeatherMap API
+    // used jquery and ajax to get the 5 day forecast
     $.ajax({
       url: queryTemp,
       method: "GET",
