@@ -7,7 +7,7 @@ Third-party APIs allow developers to access their data and functionality by maki
 
 In this activtiy I created a Weather Finder. In this project I used HTML, CSS, and Javascript.  I have used my knowledge that I have gained in my fullstack class to complete this project.  Along the way I had to look up how to do certain functions and watched alot of videos to figure out certain methods.  
 
-This was a tough project for me but fun.  I had no previous experience with jQuery but with alot of work was able to figure things out.  
+This was a tough project for me but fun.  I had no previous experience with jQuery but with alot of work was able to figure things out.  Was the first time using API's also.
 
 I used bootstrap for the first time as well.  I found that it was alot easier to style the page using boosttrap. I had to play with formatting alot inorder for it to work.
 
