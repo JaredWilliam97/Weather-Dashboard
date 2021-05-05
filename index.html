@@ -1,108 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Weather Dashboard</title>
-</head>
- 
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+  </head>
 
-<body>
-
-  
-  <div class="container">
-
-    <div class="row">
-      <div class="col-lg-12">
-        
-        <div class="card-top text-center text-white bg-dark mb-3">
-          <div class="card-two">
-            <h1>WEATHER DASHBOARD</h1>
+  <body>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card-top text-center text-white bg-dark mb-3">
+              <div class="card-two">
+                <h1>WEATHER DASHBOARD</h1>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="row">
+        <div class="row">
+          <div class="col-lg-12">Search for a City:</div>
+        </div>
 
-      <div class="col-lg-12">Search for a City:</div>
-    </div>
-
-
-    <div class="row">
-      <div class="col-lg-5">
-
-
-
-        
-        <input type="text" id="city-input">
-        <button class="btn btn-large btn-primary" id="search-button" type="submit" value="Search">
-          <i class="fa fa-search"></i>
-        </button>
-        
-      </div>
-    </div>
-
-    <div class="col-lg-7"></div>
-
-    <br>
-
-    <!-- Cites -->
-
-    <div class="row">
-
-      <div class="col-lg-2">
-        <div class="card" style="border: none">
-          <!-- Previously searched cities -->
-          <div class="city-card-body" id="searched-city">
+        <div class="row">
+          <div class="col-lg-5">
+            <input type="text" id="city-input" />
+            <button
+              class="btn btn-large btn-primary"
+              id="search-button"
+              type="submit"
+              value="Search"
+            >
+              <i class="fa fa-search"></i>
+            </button>
           </div>
         </div>
-      </div>
 
-      <div class="col-lg-2"></div>
+        <div class="col-lg-7"></div>
 
-      <!-- Weather column -->
-      <div class="col-lg-8">
-        <div class="city">
+        <br />
 
-          <h3 class="city"></h3>
-          <h3 class="today-date"></h3>
-          <h3 class="condition-image"></h3>
+        <!-- Cites -->
+
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="card" style="border: none">
+              <!-- Previously searched cities -->
+              <div class="city-card-body" id="searched-city"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-2"></div>
+
+          <!-- Weather column -->
+          <div class="col-lg-8">
+            <div class="city">
+              <h3 class="city"></h3>
+              <h3 class="today-date"></h3>
+              <h3 class="condition-image"></h3>
+            </div>
+
+            <br /><br />
+
+            <div class="weather-info"></div>
+          </div>
         </div>
 
-        <br><br>
+        <br />
 
-        <div class="weather-info"></div>
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 id="five-day-text"></h2>
+          </div>
+        </div>
 
+        <div class="row forecastCards"></div>
       </div>
     </div>
 
-    <br>
-
-
-
-    <div class="row">
-
-      <div class="col-lg-12">
-        <h2 id="five-day-text"></h2>
-      </div>
-    </div>
-
-    <div class="row forecastCards"></div>
-  </div>
-
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="assets/css/script.js"></script>
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/css/script.js"></script>
+  </body>
 </html>

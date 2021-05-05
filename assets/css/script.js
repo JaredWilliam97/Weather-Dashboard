@@ -26,8 +26,7 @@ function displayCurrentWeather(city) {
   $.ajax({
     url: queryURL,
     method: "GET",
-  })
-  .then(function (response) {
+  }).then(function (response) {
     $(".weather-info").empty();
     $(".condition-image").empty();
 
@@ -55,4 +54,85 @@ function displayCurrentWeather(city) {
 
     $(".condition-image").append('<img src="' + bigCurrent + '" />');
   });
+}
+$("#search-button").on("click", function (event) {
+  event.preventDefault();
+
+  var inputCity = $("#city-input").val().trim();
+  cityArray.push(inputCity);
+
+  $(".city").text(inputCity);
+
+  var todayDate = $(".today-date");
+  console.log(todayDate);
+
+  $(todayDate).text("(" + moment().format("MM/DD/YYYY") + ")");
+
+  var fiveDayText = $("#five-day-text");
+  console.log(fiveDayText);
+  $(fiveDayText).text("3-Hour Forecast: ");
+
+  displayCurrentWeather(inputCity);
+  displaySearchedCity(inputCity);
+  fiveDayForecast(inputCity);
+});
+function displaySearchedCity(newCity) {
+  $(".city-card-body").empty();
+
+  localStorage.setItem("searchedCity", JSON.stringify(cityArray));
+
+  for (var i = 0; i < cityArray.length; i++) {
+    var cityName = $("<p>");
+    cityName.addClass("new-city-p");
+    cityName.attr(cityArray[i]);
+    cityName.text(cityArray[i]);
+
+    $(".city-card-body").append(cityName);
+  }
+}
+function fiveDayForecast(inputCityName) {
+  var queryTemp =
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
+    inputCityName +
+    "&APPID=" +
+    APIKey +
+    "&units=imperial";
+  var queryConditionImage =
+    // Run AJAX call to the OpenWeatherMap API
+    $.ajax({
+      url: queryTemp,
+      method: "GET",
+    }).then(function (tempAnswer) {
+      $(".forecastCards").empty();
+
+      for (var i = 0; i < 5; i++) {
+        var forecastDate = tempAnswer.list[i].dt_txt.slice(0, 10);
+
+        var theTemp = tempAnswer.list[i].main.temp;
+        var theHumidity = tempAnswer.list[i].main.humidity;
+        var weatherResponse = tempAnswer.list[i].weather[0].icon;
+
+        var mapover =
+          "http://openweathermap.org/img/w/" + weatherResponse + ".png";
+
+        var cardContent =
+          "<div class='col-sm-2 cardDay'><p class='dateForecast'>" +
+          forecastDate +
+          "</p><p>" +
+          '<img src="' +
+          mapover +
+          '" />' +
+          "</p><p>" +
+          "Temp: " +
+          theTemp +
+          "℉" +
+          "</p><p>" +
+          "Humidity: " +
+          theHumidity +
+          "%" +
+          "</p></div>";
+
+        $(".forecastCards").append(cardContent);
+      }
+    });
 }
