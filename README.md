@@ -1,8 +1,9 @@
 # 06 Server-Side APIs: Weather Dashboard
+https://jaredwilliam97.github.io/Weather-Dashboard/
 
 Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
-In this activtiy I created a Weather Finder. In this project I used HTML, CSS, and Javascript.  I have used my knowledge that I have gained in my fullstack class to complete this project.  Along the way I had to look up how to do certain functions and watched alot of videos to figure out certain methods.  I 
+In this activtiy I created a Weather Finder. In this project I used HTML, CSS, and Javascript.  I have used my knowledge that I have gained in my fullstack class to complete this project.  Along the way I had to look up how to do certain functions and watched alot of videos to figure out certain methods.  
 
 This was a tough project for me but fun.  I had no previous experience with jQuery but with alot of work was able to figure things out.  
 
