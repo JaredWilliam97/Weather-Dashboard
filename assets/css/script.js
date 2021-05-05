@@ -1,4 +1,4 @@
-// Attempted this method but had to change 
+// Attempted this method but had to change
 // var apiKey = "1d6fd810a7af591bd185bc2ab7f866ba";
 // var apiKey2 = ""
 //   .getElementById("search-city-button")
@@ -11,6 +11,7 @@
 //       apiKey +
 //       "&units=imperial";
 //   });
+// created new key and started an array
 var APIKey = "1d6fd810a7af591bd185bc2ab7f866ba";
 var cityArray = [];
 
@@ -22,28 +23,36 @@ function displayCurrentWeather(city) {
     APIKey +
     "&units=imperial";
 
-    $("#search-button").on("click", function (event) {
-      event.preventDefault();
-    
-      var inputCityName = $("#city-input").val().trim();
-      cityArray.push(inputCityName);
-    
-      $(".city").text(inputCityName);
-    
-      var todayDate = $(".today-date");
-      console.log(todayDate);
-    
-      // Should I have added a <br> here?
-      $(todayDate).text("(" + moment().format("MM/DD/YYYY") + ")");
-    
-      var fiveDayText = $("#five-day-text");
-      console.log(fiveDayText);
-      $(fiveDayText).text("3-Hour Forecast: ");
-    
-      // These are the functions in one place
-    
-      displayCurrentWeather(inputCityName);
-      displaySearchedCity(inputCityName);
-      fiveDayForecast(inputCityName);
-      console.log(cityArray);
-    });
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  })
+  .then(function (response) {
+    $(".weather-info").empty();
+    $(".condition-image").empty();
+
+    var weather = $(".weather-info");
+
+    var tempResponse = response.main.temp;
+
+    var temperature = $("<div>").text("Temperature: " + tempResponse + "℉");
+    weather.append(temperature);
+
+    var humidityCall = response.main.humidity;
+
+    var humidity = $("<div>").text("Humidity: " + humidityCall + "%");
+    weather.append(humidity);
+
+    var windCall = response.wind.speed;
+
+    var wind = $("<div>").text("Wind Speed: " + windCall + " MPH");
+    weather.append(wind);
+
+    var weatherCurrent = response.weather[0].icon;
+
+    var bigCurrent =
+      "http://openweathermap.org/img/w/" + weatherCurrent + ".png";
+
+    $(".condition-image").append('<img src="' + bigCurrent + '" />');
+  });
+}

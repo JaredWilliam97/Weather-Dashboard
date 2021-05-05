@@ -6,6 +6,8 @@ body {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 h1 {
+  display: flex;
+  justify-content: flex-start;
   color: rgb(22, 65, 206);
 }
 
