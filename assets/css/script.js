@@ -73,11 +73,13 @@ $("#search-button").on("click", function (event) {
   console.log(fiveDayText);
   $(fiveDayText).text("3-Hour Forecast: ");
 
+  // adding some comments for testing pushing
+
   displayCurrentWeather(inputCity);
   displaySearchedCity(inputCity);
   fiveDayForecast(inputCity);
 });
-//created displayed search city
+//created displayed search city and used local storage
 function displaySearchedCity(newCity) {
   $(".city-card-body").empty();
 
